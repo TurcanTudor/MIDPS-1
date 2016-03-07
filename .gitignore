@@ -1,0 +1,9 @@
+# Lab 1 ignore files
+*.exe
+*.obj
+*.res
+*.tds
+*.~bpr
+*.~cpp
+*.~dfm
+*.~h
