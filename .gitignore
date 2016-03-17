@@ -3,6 +3,10 @@
 *.obj
 *.res
 *.tds
+*.bpr
+*.dfm
+*.ddp
+*.~ddp
 *.~bpr
 *.~cpp
 *.~dfm
