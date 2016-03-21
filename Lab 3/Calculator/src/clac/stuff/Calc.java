@@ -221,7 +221,7 @@ public class Calc extends javax.swing.JFrame {
             }
         });
 
-        clear.setText("C");
+        clear.setText("<-");
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
@@ -235,7 +235,7 @@ public class Calc extends javax.swing.JFrame {
             }
         });
 
-        allclear.setText("ac");
+        allclear.setText("C");
         allclear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allclearActionPerformed(evt);
@@ -471,6 +471,7 @@ public class Calc extends javax.swing.JFrame {
     private void allclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allclearActionPerformed
         display.setText("");
         pointClicked=0;
+        FirstNum=secondNum=0;
     }//GEN-LAST:event_allclearActionPerformed
 
     private void plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusActionPerformed
@@ -482,7 +483,11 @@ public class Calc extends javax.swing.JFrame {
     }//GEN-LAST:event_plusActionPerformed
 
     private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
-        secondNum=Double.parseDouble(display.getText());
+        if(display.getText().isEmpty()){
+            secondNum=FirstNum;
+        }else{
+            secondNum=Double.parseDouble(display.getText());
+        }
         if(plusClicked>0){
             result  = FirstNum + secondNum;
             display.setText(String.valueOf(result));
@@ -525,7 +530,9 @@ public class Calc extends javax.swing.JFrame {
     }//GEN-LAST:event_divideActionPerformed
 
     private void squarerootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squarerootActionPerformed
-        FirstNum = Double.parseDouble(display.getText());
+        if(minusClicked==0 && multiplyClicked==0 && plusClicked==0 && divideClicked==0){
+            FirstNum = Double.parseDouble(display.getText());
+        }
         display.setText(String.valueOf(Math.sqrt(FirstNum)));
     }//GEN-LAST:event_squarerootActionPerformed
 
