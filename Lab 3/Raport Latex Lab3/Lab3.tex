@@ -1,0 +1,54 @@
+%\documentclass[11pt]{article}
+%\usepackage[left=12mm, top=0.5in, bottom=0.5in]{geometry}
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage{lab_style}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\begin{document}
+	\input{Title.tex}
+	\cleardoublepage
+	
+	\newpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	\setcounter{secnumdepth}{4}
+	
+	\addtocontents{toc}{\protect\thispagestyle{empty}} 
+	\cleardoublepage
+	 
+	\addcontentsline{toc}{section}{Introduction}
+	\input{Introduction.tex}
+	\cleardoublepage
+	
+	\addcontentsline{toc}{section}{Introduction}
+	\input{Code.tex}
+	\cleardoublepage
+	
+	\addcontentsline{toc}{section}{Conclusions}
+	\input{Conclusions.tex}
+	\cleardoublepage
+		
+\end{document}
